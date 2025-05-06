@@ -119,8 +119,7 @@ class _BarcodeKeyboardListenerState extends State<BarcodeKeyboardListener> {
   }
 
   void _keyBoardCallback(RawKeyEvent keyEvent) {
-    if (keyEvent.logicalKey.keyId > 255 &&
-        keyEvent.data.logicalKey != LogicalKeyboardKey.enter &&
+    if (keyEvent.data.logicalKey != LogicalKeyboardKey.enter &&
         keyEvent.data.logicalKey != LogicalKeyboardKey.shiftLeft) return;
     if ((!_useKeyDownEvent && keyEvent is RawKeyUpEvent) ||
         (_useKeyDownEvent && keyEvent is RawKeyDownEvent)) {
